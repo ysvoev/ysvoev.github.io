@@ -11,6 +11,10 @@ a {
   color: blue;
 }
 
+img {
+  border-radius: 64px;
+}
+
 .block {
   margin: auto;
   margin-top: 320px;
