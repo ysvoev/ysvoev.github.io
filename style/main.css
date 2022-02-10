@@ -2,6 +2,8 @@ body {
   display: block;
   margin: 0 auto;
   font-family: "Inter", "Arial", sans-serif;
+  font-size: 24px;
+  line-height: 32px;
 }
 
 a {
@@ -14,7 +16,7 @@ a {
   margin: auto;
   margin-top: 320px;
   margin-bottom: 460px;
-  max-width: 460px;
+  max-width: 640px;
 }
 
 .description {
