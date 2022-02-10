@@ -12,6 +12,7 @@ a {
 .block {
   height: calc(100vh - 32px);
   margin: 16px;
+  margin-bottom: 64px;
   max-width: 460px;
 }
 
