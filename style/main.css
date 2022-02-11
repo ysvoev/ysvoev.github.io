@@ -12,7 +12,8 @@ a {
 }
 
 img {
-  border-radius: 64px;
+  border-radius: 100px;
+  background-color: grey;
 }
 
 .block {
