@@ -12,8 +12,8 @@ a {
 }
 
 p {
-  margin-top: 8px;
-  margin-bottom: 32px;
+  margin-top: 4px;
+  margin-bottom: 24px;
 }
 
 img {
@@ -37,4 +37,5 @@ img {
 
 .photo {
   border-radius: 2px;
+  margin-right: -3px;
 }
