@@ -11,6 +11,11 @@ a {
   color: blue;
 }
 
+p {
+  margin-top: 8px;
+  margin-bottom: 40px;
+}
+
 img {
   background-color: grey;
 }
