@@ -204,6 +204,11 @@ p {
     max-width: 96vw;
     min-height: 400px;
   }
+
+  .photo img {
+    max-width: 96vw;
+    min-height: 400px;
+  }
 }
 
 .video img:hover {
