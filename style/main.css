@@ -189,7 +189,7 @@ video {
 
   .link:not(:last-child) {
     margin-right: 0px;
-}
+  }
 
   .contact {
     display: block;
@@ -203,5 +203,37 @@ video {
   .avatar{
     height: 80px;
     width: 80px;
+  }
+
+
+  .stil img, video {
+  background-color: rgb(255, 255, 255, 0.04);
+  max-width: 98vw;
+  display: grid;
+  min-height: 200px;
+  margin-bottom: 2px;
+  }
+
+  .stil video {
+    border-radius: 48px;
+  }
+
+  .first {
+    border-radius: 48px 48px 16px 16px;
+    overflow: auto;
+  }
+
+  .last {
+    border-radius: 16px 16px 48px 48px;
+    overflow: auto;
+  }
+
+  .stil:not(.last, .first) {
+    border-radius: 16px;
+    overflow: auto;
+  }
+
+  .last {
+    margin-bottom: calc((-30px) + (-1vw));
   }
 }
