@@ -121,7 +121,16 @@ video {
   z-index: -999999;
 }
 
-@media (max-width: 1279px) {
+@media (max-width: 999px) {
+
+    .block {
+      position: absolute;
+      display: block;
+      align-content: center;
+      height: 100%;
+      width: 100%;
+    }
+
     video.vertical {
         pointer-events: none;
         margin: auto;
@@ -141,8 +150,8 @@ video {
     }
 
     p, a {
-      font-size: 20px;
-      line-height: 28px;
+      font-size: 24px;
+      line-height: 32px;
     }
 
     .info {
@@ -154,33 +163,6 @@ video {
       align-items: center;
     }
 
-    .contact {
-      align-content: center;
-      display: flex;
-      flex-wrap: nowrap;
-      justify-content: center;
-      align-content: center;
-      flex-direction: column;
-      align-items: center;
-      margin-top: -8px;
-    }
-
-    .project {
-        align-content: center;
-        display: flex;
-        flex-wrap: nowrap;
-        justify-content: center;
-        align-content: center;
-        flex-direction: column;
-        align-items: center;
-        margin-top: 16px;
-      }
-
-    .link.row{
-      margin: revert;
-      width: auto;
-      margin: 0 0 8px 0;
-    }
 
     p {
       width: 680px;
@@ -189,7 +171,28 @@ video {
 
 }
 
-@media (min-width: 1280px) {
+
+@media (orientation: landscape) {
+    .block {
+      display: none;
+    }
+
+    video.horizontal {
+      display: block;
+        pointer-events: none;
+        margin: auto;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+    }
+    
+    video.vertical {
+        display: none;
+    }
+     
+} 
+
+@media (min-width: 1000px) {
     video.horizontal {
         pointer-events: none;
         margin: auto;
