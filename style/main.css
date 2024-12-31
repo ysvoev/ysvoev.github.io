@@ -46,11 +46,11 @@ a:hover {
 
 
 a {
-  color: rgb(255, 255, 255, 0.6);
+  color: rgb(255, 255, 255, 0.64);
 }
 
 p {
-  color: rgb(255, 255, 255, 0.4);
+  color: rgb(255, 255, 255, 0.24);
   margin: auto;
   text-align: center;
   width: 320px;
@@ -98,12 +98,12 @@ p {
 
 
 .role {
-  color: rgb(255, 255, 255, 0.4);
+  color: rgb(255, 255, 255, 0.24);
 }
 
 .name {
   margin-top: 4px;
-  color: rgb(255, 255, 255, 0.6);
+  color: rgb(255, 255, 255, 0.64);
 }
 
 .module {
