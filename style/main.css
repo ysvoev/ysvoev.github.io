@@ -8,7 +8,6 @@
        url('../fonts/Inter-Regular.otf') format('opentype');
 }
 
-
 body {
   display: block;
   margin: 0 auto;
@@ -57,6 +56,13 @@ p {
   mix-blend-mode: plus-lighter;
 }
 
+.symbols {
+  font-style: italic;
+}
+
+.number {
+  margin-bottom: 16px;
+}
 
 .block {
   position: absolute;
@@ -67,6 +73,15 @@ p {
 }
 
 .info {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-content: center;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.logo {
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
