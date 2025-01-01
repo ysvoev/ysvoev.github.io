@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteCond %{HTTP_HOST} dop.ysvoev.ru
+RewriteRule (.*) https://ysvoev.ru/$1 [R=301,L]
