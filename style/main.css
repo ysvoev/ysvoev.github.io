@@ -48,6 +48,10 @@ a {
   color: rgb(255, 255, 255, 0.64);
 }
 
+body {
+  cursor: url('../images/cursor-cat.svg') 16 16, pointer;
+}
+
 p {
   color: rgb(255, 255, 255, 0.24);
   margin: auto;
@@ -132,6 +136,7 @@ p {
   width: auto;
   padding: 0 8px 0 8px;
 }
+
 
 video {
   z-index: -999999;
