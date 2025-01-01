@@ -48,7 +48,7 @@ a {
   color: rgb(255, 255, 255, 0.64);
 }
 
-body {
+.telegram a {
   cursor: url('../images/cursor-cat.svg') 16 16, pointer;
 }
 
