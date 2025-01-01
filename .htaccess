@@ -1,4 +1,3 @@
 RewriteEngine On
-RewriteBase /
-RewriteCond %{HTTP_HOST} ^(.+).ysvoev.ru$
-RewriteRule (.*) http://ysvoev.ru/$1?region=%1 [L,R=301,QSA]
+RewriteCond %{HTTP_HOST} ^answers\.ysvoev\.ru$   [NC]
+RewriteRule ^ http://ysvoev.ru/suberror  [L,R]
