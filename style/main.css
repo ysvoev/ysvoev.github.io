@@ -103,6 +103,13 @@ p {
     transition-delay: 1.4s;
     margin-left: -40%;
     touch-action: none;
+
+    & .circle {
+      width: 120px;
+      margin-left: -16px;
+      transition: 1.4s;
+      transition-delay: 1.8s;
+    }
 }
 
 
