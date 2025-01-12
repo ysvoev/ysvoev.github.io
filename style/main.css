@@ -306,6 +306,7 @@ p {
 video {
   width: 100%;
   z-index: -999999;
+  background-color: rgb(255, 255, 255 , 0.02);
 }
 
 
@@ -313,8 +314,10 @@ video {
 .circle {
   border-radius: 360px;
   width: 80px;
+  min-height: 80px;
   margin-left: -8px;
   transition: 1.4s;
+  background-color: rgb(255, 255, 255 , 0.02);
 }
 
 .circle:hover {
@@ -331,6 +334,7 @@ video {
 img {
   width: 100%;
   transition: 1.4s;
+  background-color: rgb(255, 255, 255 , 0.02);
 }
 
 @media (max-width: 999px) {
@@ -405,6 +409,7 @@ img {
 
     .circle {
       width: 240px;
+      min-height: 240px;
     }
 
     .circle:hover {
@@ -501,6 +506,7 @@ img {
 
     .circle {
       width: 160px;
+      min-height: 160px;
     }
 
     .circle:hover {
