@@ -389,6 +389,21 @@ img {
       margin-right: 4%;
     }
 
+    .block:has(> .column-left:hover) {
+        width: 100%;
+        transition: 1.4s;
+        transition-delay: 1.4s;
+        touch-action: none;
+    }
+
+    .block:has(> .column-right .focus:hover) {
+        width: 100%;
+        transition: 1.4s;
+        transition-delay: 1.4s;
+        margin-left: -40%;
+        touch-action: none;
+    }
+
     .circle {
       width: 240px;
     }
