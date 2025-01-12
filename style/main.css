@@ -400,7 +400,7 @@ img {
         width: 100%;
         transition: 1.4s;
         transition-delay: 1.4s;
-        margin-left: -40%;
+        margin-left: 0%;
         touch-action: none;
     }
 
