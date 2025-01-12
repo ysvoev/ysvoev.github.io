@@ -408,6 +408,11 @@ img {
       width: 240px;
     }
 
+    .circle:hover {
+      width: 360px;
+
+    }
+
     .link {
       margin: 0 32px 12px 0;
     }
