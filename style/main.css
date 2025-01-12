@@ -106,6 +106,7 @@ p {
 }
 
 
+
 .column-left::-webkit-scrollbar {
     display: none;
 }
@@ -321,7 +322,7 @@ video {
 }
 
 .circle:hover {
-  width: 200px;
+  width: 160px;
   margin-left: -16px;
   transition: 1.4s;
   transition-delay: 1.4s;
