@@ -314,7 +314,7 @@ video {
   border-radius: 360px;
   width: 80px;
   margin-left: -8px;
-  transition: 1s;
+  transition: 1.4s;
 }
 
 .circle:hover {
@@ -322,7 +322,6 @@ video {
   margin-left: -16px;
   transition: 1.4s;
   transition-delay: 1.4s;
-
 }
 
 .showreel-mobile {
@@ -410,8 +409,11 @@ img {
 
     .circle:hover {
       width: 360px;
-
+      margin-left: -16px;
+      transition: 1.4s;
+      transition-delay: 0s;
     }
+
 
     .link {
       margin: 0 32px 12px 0;
@@ -503,7 +505,9 @@ img {
 
     .circle:hover {
       width: 200px;
-
+      margin-left: -16px;
+      transition: 1.4s;
+      transition-delay: 0s;
     }
 
     .link {
