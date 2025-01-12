@@ -94,6 +94,7 @@ p {
     width: 140%;
     transition: 1.4s;
     transition-delay: 1.4s;
+    touch-action: none;
 }
 
 .block:has(> .column-right .focus:hover) {
@@ -101,6 +102,7 @@ p {
     transition: 1.4s;
     transition-delay: 1.4s;
     margin-left: -40%;
+    touch-action: none;
 }
 
 
@@ -320,6 +322,7 @@ video {
   margin-left: -16px;
   transition: 1.4s;
   transition-delay: 1.4s;
+  touch-action: none;
 }
 
 img {
