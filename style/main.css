@@ -322,7 +322,11 @@ video {
   margin-left: -16px;
   transition: 1.4s;
   transition-delay: 1.4s;
-  touch-action: none;
+
+}
+
+.showreel-mobile {
+  display: none;
 }
 
 img {
@@ -335,12 +339,15 @@ img {
     .block {
       display: block;
       position: relative;
-      margin-top: 48vw;
-      margin-bottom: 48vw;
     }
 
     .none {
       display: none;
+    }
+
+    .showreel-mobile {
+      display: block;
+      margin: 4% -4% 20% -4%;
     }
 
     .center {
@@ -357,13 +364,15 @@ img {
     }
 
     .module {
-      margin-bottom: 120px;
+      height: 100vh;
     }
+
 
     .column-left {
       width: 100%;
       min-width: 100%;
       max-width: 100%;
+      position: absolute;
     }
 
 
@@ -371,6 +380,8 @@ img {
       width: 100%;
       min-width: 100%;
       max-width: 100%;
+      height: 100%;
+      position: fixed;
     }
 
     .column-right .module {
