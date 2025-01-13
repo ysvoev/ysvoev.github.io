@@ -413,6 +413,13 @@ img {
         transition-delay: 1.4s;
         margin-left: 0%;
         touch-action: none;
+
+        & .circle {
+          width: 240px;
+          margin-left: -8px;
+          transition: 1.4s;
+          transition-delay: 0s;
+        }
     }
 
     .circle {
@@ -510,7 +517,16 @@ img {
         transition-delay: 1.4s;
         margin-left: 0%;
         touch-action: none;
+
+        & .circle {
+          width: 160px;
+          margin-left: -8px;
+          transition: 1.4s;
+          transition-delay: 0s;
+        }
     }
+
+
 
     .circle {
       width: 160px;
