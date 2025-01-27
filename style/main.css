@@ -23,6 +23,16 @@ body {
   cursor: url('../images/cursor-default.svg') 16 16, pointer;
 }
 
+p, a, h1, h2 {
+  font-family: "Inter", "Arial", sans-serif;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: normal;
+  text-transform: uppercase;
+  font-feature-settings: 'pnum' on, 'lnum' on, 'case' on, 'cpsp' on, 'zero' on, 'ordn' on, 'salt' on, 'ss01' on;
+  font-optical-sizing: auto;
+}
+
 
 body::-webkit-scrollbar {
     display: none;
@@ -55,7 +65,7 @@ a {
   cursor: url('../images/cursor-cat.svg') 16 16, pointer;
 }
 
-p {
+p, h1, h2 {
   color: rgb(255, 255, 255, 0.24);
   width: 32vw;
   mix-blend-mode: plus-lighter;
@@ -440,7 +450,7 @@ img {
     }
 
 
-    p, a {
+    p, a, h1, h2 {
       font-size: 32px;
       line-height: 48px;
       width: 94vw;
@@ -545,7 +555,7 @@ img {
     }
 
 
-    p, a {
+    p, a, h1, h2 {
       font-size: 16px;
       line-height: 24px;
       width: 94vw;
