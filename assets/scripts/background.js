@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Фиксированные фоны для отдельных страниц
     const pathname = (window.location && window.location.pathname || '').toLowerCase();
-    const is404Page = pathname.includes('/404');
+    const is404Page = pathname.includes('404');
     const isFilmPage = pathname.includes('/film');
 
     if (is404Page) {
