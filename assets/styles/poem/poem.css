@@ -1,0 +1,280 @@
+/* переменные */
+
+:root {
+  --color-white: #e7e5e0;
+  --color-black: #030303;
+  --color-blackgrey: #0d0d0d;
+  --color-deepgrey: #1E1E1E;
+  --color-mediumgrey: #2C2C2C;
+  --color-regulargrey: #606060;
+  --color-lightgrey: #A9A9A9;
+  --color-green: #2d773d;
+  --color-yellow: #cea717;
+  --color-blue: #194a92;
+  --color-violet: #5a1f60;
+  --color-pink: #47152f;
+  --color-red: #6b1919;
+  --color-orange: #934011;
+  --font-size: 20px;
+  --m-font-size: calc(var(--font-size) * 2.4);
+  --line-height: 24px;
+  --m-line-height: calc(var(--line-height) * 2.4);
+  --text-transform: lowercase;
+  --gap-8: 8px;
+  --padding: 8px;
+  --radius-4: 4px;
+  --radius-16: 16px;
+  --radius-80: 80px;
+  --opacity-20: 0.2;
+  --opacity-40: 0.4;
+  --opacity-60: 0.6;
+  --opacity-80: 0.8;
+  --opacity-100: 1.0;
+  --portfolio-width: 80px;
+  --animation-duration: 400ms;
+  --animation-cubic: cubic-bezier(0.8, 0, 0.2, 1);
+  
+  /* Переменные для курсоров - изолируем от JS */
+  --cursor-default: crosshair;
+  --cursor-clickable: pointer;
+}
+
+/* основные стили */
+
+/* Радикально простой подход - только базовые элементы */
+html, body {
+  cursor: crosshair !important;
+}
+
+body {
+  display: block;
+  margin: auto;
+  font-optical-sizing: auto;
+  z-index: 100;
+}
+
+/* Все элементы наследуют crosshair, кроме ссылок */
+* {
+  cursor: inherit !important;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+
+h1, h2, p, a {
+  font-family: "Arial", sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  text-transform: var(--text-transform);
+  color: var(--color-blue);
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+/* Ссылки всегда pointer - максимальная специфичность */
+a {
+  cursor: pointer !important;
+}
+
+button, input[type="submit"], input[type="button"], .clickable {
+  cursor: pointer !important;
+}
+
+/* Дополнительная защита для всех состояний ссылок */
+a:link, a:visited, a:hover, a:active, a:focus, a:any-link {
+  cursor: pointer !important;
+}
+
+.bg-green {
+  background-color: var(--color-green);
+  color: var(--color-black);
+}
+
+.bg-yellow {
+  background-color: var(--color-yellow);
+  color: var(--color-black);
+}
+
+.bg-blue {
+  background-color: var(--color-blue);
+  color: var(--color-black);
+}
+
+.bg-violet {
+  background-color: var(--color-violet);
+  color: var(--color-black);
+}
+
+.bg-pink {
+  background-color: var(--color-pink);
+  color: var(--color-black);
+}
+
+.bg-red {
+  background-color: var(--color-red);
+  color: var(--color-black);
+}
+
+.bg-orange {
+  background-color: var(--color-orange);
+  color: var(--color-black);
+}
+
+
+/* Сохраняем цветовые эффекты ссылок при наведении */
+a.blend-invert:hover::after {
+  opacity: 0;
+}
+
+a:hover {
+  transition: var(--animation-duration) var(--animation-cubic);
+}
+
+.block {
+  width: 100vw;
+  max-width: 100vw;
+  margin: auto;
+}
+
+.links {
+  display: flex;
+  gap: var(--gap-8);
+  margin-top: 40vh;
+  position: sticky;
+  top: var(--padding);
+  width: 100%;
+  justify-content: space-between;
+  z-index: 9999;
+  pointer-events: auto;
+}
+
+.links a {
+  pointer-events: auto !important;
+  position: relative;
+  z-index: 10000;
+}
+
+/* Принудительно убираем pointer-events: none со всех элементов которые могут блокировать ссылки */
+body * {
+  pointer-events: auto;
+}
+
+/* Исключения для элементов которые должны быть неинтерактивными */
+.noise, svg[style*="pointer-events: none"] {
+  pointer-events: none !important;
+}
+
+.contacts {
+  display: flex;
+  gap: var(--gap-8);
+  position: fixed;
+  top: var(--padding);
+  width: -webkit-fill-available;
+  justify-content: space-between;
+  z-index: 101;
+}
+
+.padding-left {
+  padding-left: var(--padding);
+}
+
+.padding-right {
+  padding-right: var(--padding);
+}
+
+
+.navigation {
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  gap: var(--gap-8);
+  position: fixed;
+  bottom: var(--padding);
+  z-index: 102;
+}
+
+.poem p {
+  text-align: left;
+}
+
+.poems {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: calc(var(--gap-8)*20);
+  z-index: 100;
+}
+
+.poem {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(var(--gap-8)/4);
+  margin-left: 0vw;
+}
+
+.hover-poem:hover {
+  transition: var(--animation-duration) var(--animation-cubic);
+}
+
+.poem p {
+  margin-bottom: calc(var(--gap-8) * 2);
+  margin-top: calc(var(--gap-8) * 2);
+  width: 40vw;
+}
+
+.poem h2 {
+  margin-left: 0vw;
+}
+*:focus {
+  outline: none;
+}
+
+:root {
+  font-family: Inter, sans-serif;
+  font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 1000px) {
+  h1, h2, p, a {
+    font-size : var(--m-font-size); 
+    line-height : var(--m-line-height);     
+  }
+
+  .none {
+    display: none;
+  }
+  
+  .poems {
+    width: 100vw;
+  }
+
+  .poem {
+    width: auto;
+    margin-left: var(--gap-8);
+  }
+
+  .poem p {
+    width: auto;
+  }
+
+  .contacts {
+    display: block;
+  }
+
+}
+
+
+

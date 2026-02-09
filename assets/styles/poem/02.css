@@ -1,0 +1,23 @@
+body {
+    background-color: var(--color-blue);
+}
+
+h1, h2, p, a {
+    color: var(--color-blue);
+}
+
+::selection {
+    background: var(--color-white);
+    color: var(--color-blue);
+}
+
+.contacts {
+    color: var(--color-white) !important;
+}
+
+.contacts h1,
+.contacts h2,
+.contacts p,
+.contacts a {
+    color: var(--color-white) !important;
+}

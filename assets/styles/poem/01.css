@@ -1,0 +1,12 @@
+body {
+  background-color: var(--color-white);
+}
+
+h1, h2, p, a {
+  color: var(--color-blue);
+}
+
+::selection {
+  background: var(--color-blue);
+  color: var(--color-black);
+  }

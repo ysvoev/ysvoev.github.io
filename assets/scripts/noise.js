@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
     noiseDiv.style.position = 'fixed';
     noiseDiv.style.top = '0';
     noiseDiv.style.left = '0';
-    noiseDiv.style.zIndex = '999';
+    noiseDiv.style.zIndex = '10001';
     noiseDiv.style.pointerEvents = 'none';
     noiseDiv.style.mixBlendMode = 'darken';
 
