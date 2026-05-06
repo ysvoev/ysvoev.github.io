@@ -175,7 +175,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Создаем текстовый элемент
     const workText = document.createElement('a');
-    workText.href = 'note/vologda';
+    workText.href = 'notes/vologda';
     
     // Применяем эффект из scew.js к тексту
     const originalText = '{готовлюсь к съёмкам в вологде}';
