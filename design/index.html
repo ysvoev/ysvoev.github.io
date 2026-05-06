@@ -17,6 +17,9 @@
     <script src="../assets/scripts/scew-link.js"></script>
     <script src="../assets/scripts/font.js"></script>
     <script src="../assets/scripts/background.js"></script>
+    <script src="../assets/scripts/mix-blend.js"></script>
+    <script src="../assets/scripts/pack.js"></script>
+    <script src="../assets/scripts/anchor.js"></script>
   </head>
   <body>
     <div class="block">
@@ -27,13 +30,61 @@
         </div>
         <a href="https://instagram.com/ysvoev" class="padding-right">(инстаграм)</a>
       </div>
-      <div class="navigation">
-        <a href="../">(главная)</a>
+      <div class="pages">
+        <a href="../">(✳︎ главная)</a>
         <a href="../cv/">(ищу дизайн-команду)</a>
       </div>
+      <div class="navigation none-sticky">
+        <a href="#whtnw" class="page">
+          <div class="pack pack-small">
+            <img class="case" src="../assets/images/designs/whtnw-01.png" alt="дизайн" loading="lazy">
+            <img class="case" src="../assets/images/designs/whtnw-04.png" alt="дизайн" loading="lazy">
+            <img class="case" src="../assets/images/designs/whtnw-06.png" alt="дизайн" loading="lazy">
+          </div>
+          <p class="case-name">)whtnw(</p>
+        </a>
+        <a href="#true" class="page">
+          <div class="pack pack-small">
+            <img class="case" src="../assets/images/designs/true-02.png" alt="дизайн" loading="lazy">
+            <img class="case" src="../assets/images/designs/true-05.png" alt="дизайн" loading="lazy">
+          </div>
+          <p class="case-name">)trueducation(</p>
+        </a>
+        <a href="#txtnw" class="page">
+          <div class="pack pack-small">
+            <img class="case" src="../assets/images/designs/txtnw-03.png" alt="дизайн" loading="lazy">
+            <img class="case" src="../assets/images/designs/txtnw-04.png" alt="дизайн" loading="lazy">
+          </div>
+          <p class="case-name">)txtnw(</p>
+        </a>
+        <a href="#kino" class="page">
+          <div class="pack pack-small">
+            <img class="case" src="../assets/images/designs/kino-01.png" alt="дизайн" loading="lazy">
+            <img class="case" src="../assets/images/designs/kino-05.png" alt="дизайн" loading="lazy">
+            <img class="case" src="../assets/images/designs/kino-06.png" alt="дизайн" loading="lazy">
+          </div>
+          <p class="case-name">)кинопрактика(</p>
+        </a>
+        <a href="#fntnw" class="page">
+          <div class="pack pack-small">
+            <img class="case" src="../assets/images/designs/fntnw-01.png" alt="дизайн" loading="lazy">
+            <img class="case" src="../assets/images/designs/fntnw-10.png" alt="дизайн" loading="lazy">
+            <img class="case" src="../assets/images/designs/fntnw-12.png" alt="дизайн" loading="lazy">
+          </div>
+          <p class="case-name">)fntnw(</p>
+        </a>
+        <a href="#fragment" class="page">
+          <div class="pack pack-small">
+            <img class="case" src="../assets/images/designs/fragment-01.png" alt="дизайн" loading="lazy">
+            <img class="case" src="../assets/images/designs/fragment-04.png" alt="дизайн" loading="lazy">
+            <img class="case" src="../assets/images/designs/fragment-05.png" alt="дизайн" loading="lazy">
+          </div>
+          <p class="case-name">)фрагменты(</p>
+        </a>
+      </div>
       <div class="content">
-        <div class="info-page">
-        <img src="../assets/images/photos/photo-d.jpg" class="photo" alt="да, это я" loading="lazy">
+        <div class="info none-sticky">
+          <img src="../assets/images/avatars/photo-d.jpg" class="photo" alt="да, это я" loading="lazy">
           <h1>юра своев</h1>
           <p>мультидисциплинарный дизайнер цифровых продуктов</p>
           <a href="https://t.me/ysvoevnow">(личный телеграм-канал)</a>
@@ -49,7 +100,7 @@
             а теперь топ 5 моих работ<br>
             [то, что хотел бы делать]:</p>
           </div>
-          <div class="project">
+          <div class="project" id="whtnw">
             <p>1)<br>
               <a href="https://whtnw.ru">(whtnw)</a><br>
               платформа для портфолио [пре-альфа версия]<br>
@@ -66,7 +117,7 @@
               <img class="project" src="../assets/images/designs/whtnw-06.png" loading="lazy">
               <video class="project" src="../assets/images/designs/whtnw-07.mp4" autoplay loop muted playsinline></video>
           </div>
-          <div class="project">
+          <div class="project" id="true">
             <p>2)<br>
               <a href="https://trueducation.ru">(trueducation)</a><br>
               провайдер корпоративного обучения<br>
@@ -81,7 +132,7 @@
               <img class="project" src="../assets/images/designs/true-04.png" loading="lazy">
               <img class="project" src="../assets/images/designs/true-05.png" loading="lazy">
           </div>
-          <div class="project">
+          <div class="project" id="txtnw">
             <p>3)<br>
               <a href="https://txtnw.ru">(txtnw)</a><br>
               текстовый редактор [альфа версия]<br>
@@ -97,7 +148,7 @@
               <img class="project" src="../assets/images/designs/txtnw-05.png" loading="lazy">
               <img class="project" src="../assets/images/designs/txtnw-06.png" loading="lazy">
           </div>
-          <div class="project">
+          <div class="project" id="kino">
             <p>4)<br>
               оформление воркшопов КИНОПРАКТИКИ<br>
               2024:<br>
@@ -121,7 +172,7 @@
               <img class="project" src="../assets/images/designs/kino-12.png" loading="lazy">
               <img class="project" src="../assets/images/designs/kino-13.png" loading="lazy">
           </div>
-          <div class="project">
+          <div class="project" id="fntnw">
             <p>5)<br>
               FNTNW<br>
               акцидентный шрифт<br>
@@ -143,7 +194,7 @@
               <img class="project" src="../assets/images/designs/fntnw-13.png" loading="lazy">
               <video class="project" src="../assets/images/designs/fntnw-14.mp4" autoplay loop muted playsinline></video>
           </div>
-          <div class="project">
+          <div class="project" id="fragment">
             <p>6)<br>
               разные проекты, фрагменты<br>
               2017 — 2025:</p>
@@ -158,7 +209,7 @@
             <video class="project" src="../assets/images/designs/fragment-09.mp4" autoplay loop muted playsinline></video>
             <img class="project" src="../assets/images/designs/fragment-10.png" loading="lazy">
           </div>
-          <div class="project">
+          <div class="project" id="ux">
             <p>7)<br>
               10-20 продуктов под NDA*<br>
               2019 — 2025:<br>
@@ -168,7 +219,7 @@
               сейчас выбираю проекты, где больше творческой свободы, чтобы работы видели люди в жизни :)</p>
           </div>
           <p>меня можно пригласить в команду или проект, просто <a href="https://t.me/ysvoev">(напиши в телеграм)</a> и там все обсудим  :)</p>
-          <p>13:15, 19.09.2025</p>
+          <p>©︎ 12:52ы, 06.05.2026</p>
         </div>
         </div>
       </div>

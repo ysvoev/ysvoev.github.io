@@ -15,8 +15,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const links = document.querySelectorAll('a');
         
         links.forEach(link => {
-            // Обрабатываем ссылки .pages особым образом
-            if (link.classList.contains('pages')) {
+            // Обрабатываем ссылки .page особым образом
+            if (link.classList.contains('page')) {
                 // Удаляем старые обработчики
                 link.removeEventListener('mouseenter', link._mouseenterHandler);
                 link.removeEventListener('mouseleave', link._mouseleaveHandler);

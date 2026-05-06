@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Стабилизируем sticky элементы после изменения DOM
         requestAnimationFrame(() => {
             // Принудительно пересчитываем layout для sticky элементов
-            const stickyElements = document.querySelectorAll('.links, .portfolio, .info, .about p:not(:last-child)');
+            const stickyElements = document.querySelectorAll('.links, .navigation, .info, .about p:not(:last-child)');
             stickyElements.forEach(el => {
                 // Форсируем GPU слой для стабильного позиционирования
                 el.style.transform = 'translateZ(0)';

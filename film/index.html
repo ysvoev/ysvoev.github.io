@@ -18,10 +18,13 @@
     <script src="../assets/scripts/font.js"></script>
     <script src="../assets/scripts/background.js"></script>
     <script src="../assets/scripts/link-mirror.js"></script>
+    <script src="../assets/scripts/pack.js"></script>
+    <script src="../assets/scripts/anchor.js"></script>
+
   </head>
   <body>
     <div class="block">
-      <div class="links-page">
+      <div class="links">
         <a href="https://t.me/ysvoev" class="padding-left">(телеграм)</a>
         <div class="contacts">
           <a href="https://www.kinopoisk.ru/name/10298197/">(кинопоиск)</a>
@@ -29,12 +32,44 @@
         </div>
         <a href="https://instagram.com/ysvoev" class="padding-right">(инстаграм)</a>
       </div>
-      <div class="navigation">
-        <a href="../">(главная)</a>
+      <div class="pages">
+        <a href="../">(✳︎ главная)</a>
+      </div>
+      <div class="navigation none-sticky">
+        <a href="#showreel" class="page">
+          <div class="pack pack-small">
+            <img class="case" src="../assets/images/films/film-01.png" alt="дизайн" loading="lazy">
+          </div>
+          <p class="case-name">)шоурил(²⁰²⁶</p>
+        </a>
+        <a href="#voila" class="page">
+          <div class="pack pack-small">
+            <img class="case" src="../assets/images/films/cover-01.png" alt="дизайн" loading="lazy">
+          </div>
+          <p class="case-name">)вуаля(</p>
+        </a>
+        <a href="#box" class="page">
+          <div class="pack pack-small">
+            <img class="case" src="../assets/images/films/cover-03.png" alt="дизайн" loading="lazy">
+          </div>
+          <p class="case-name">)коробка(</p>
+        </a>
+        <a href="#phone" class="page">
+          <div class="pack pack-small">
+            <img class="case" src="../assets/images/films/cover-02.png" alt="дизайн" loading="lazy">
+          </div>
+          <p class="case-name">)только телефон не проеби(</p>
+        </a>
+        <a href="#projects" class="page">
+          <div class="pack pack-small">
+            <img class="case" src="../assets/images/films/film-01.png" alt="дизайн" loading="lazy">
+          </div>
+          <p class="case-name">)проекты(¹⁵</p>
+        </a>
       </div>
       <div class="content">
-        <div class="info-page">
-        <img src="../assets/images/photos/photo-dop.png" class="photo" alt="да, это я" loading="lazy">
+        <div class="info none-sticky">
+          <img src="../assets/images/avatars/photo-dop.png" class="photo" alt="да, это я" loading="lazy">
           <h1>юра своев</h1>
           <p>оперпост и режиссёр</p>
           <a href="https://t.me/ysvoevnow">(личный телеграм-канал)</a>
@@ -43,7 +78,7 @@
           <div class="project">
             <p>хочу снимать простое кино, чтобы оно вызывало разные — ощущения, от чувства прекрасного до чувства ужаса</p>
           </div>
-          <div class="project">
+          <div id="showreel" class="project">
             <video class="project" src="../assets/videos/showreels/showreel.mp4" autoplay loop muted playsinline></video>
               <p>2026<br>
                 <a href="https://youtu.be/AKRQwhQ4NK4">(шоурил)</a><br>
@@ -57,27 +92,88 @@
             режиссёр юра своев<br>
             драма<br></p>
         </div>
-        <div class="project">
+        <div id="phone" class="project">
           <video class="project" src="../assets/videos/fragments/film-02.mp4" autoplay loop muted playsinline></video>
           <p>2025<br>
             <a href="https://youtu.be/qmQPqdEHnbs">(только телефон не проеби)</a><br>
             режиссёр юра своев<br>
             драма<br></p>
-      </div>
-      <div class="project">
-        <video class="project" src="../assets/videos/fragments/film-01.mp4" autoplay loop muted playsinline></video>
+        </div>
+        <div class="project">
+          <video class="project" src="../assets/videos/fragments/film-01.mp4" autoplay loop muted playsinline></video>
           <p>2025<br>
             <a href="https://youtu.be/AKRQwhQ4NK4">(вуаля)</a><br>
             режиссёр юра своев<br>
             психологический хоррор<br></p>
         </div>
-          <div class="project">
-            <img class="project" src="../assets/images/films/film-01.png" loading="lazy">
+        <div id="voila" class="project">
+          <img class="project" src="../assets/images/films/film-01.png" loading="lazy">
+        </div>
+        <div id="projects" class="project">
+          <p>15)<br>
+            Коробка<br>
+            режиссёр Юра Своев, МШНК, драма, 2025
+            <br><br>
+            14)<br>
+            Приворот не туда<br>
+            режиссёр Наталия Невская, МШНК, комедия 2025
+            <br><br>
+            13)<br>
+            Только телефон не проеби<br>
+            режиссёр Юра Своев, драма, 2025
+            <br><br>
+            12)<br>
+            Босиком за пианино<br>
+            режиссёр Ольга Шитикова, драма, 2025
+            <br><br>
+            11)<br>
+            Размазня<br>
+            режиссёр Андрей Станишевский, ВГИК, драма, 2025
+            <br><br>
+            10)<br>
+            Чокопун<br>
+            режиссёр Елена Артеева, драмеди, 2024
+            <br><br>
+            9)
+            <br>Вуаля<br>
+            режиссёр Юра Своев, психологический хоррор, 2024
+            <br><br>
+            8)<br>
+            Чёрный пиджак<br>
+            режиссёр Михаил Тонин, Индустрия, триллер, детектив, 2024
+            <br><br>
+            7)<br>
+            Мам, оно хочет, чтобы я зализал свои раны<br>
+            режиссёр Михаил Тонин, Индустрия, хоррор, 2023
+            <br><br>
+            6)<br>
+            Хомра<br>
+            режиссёр Михаил Тонин, Индустрия, триллер, 2023
+            <br><br>
+            5)<br>
+            Конфликт<br>
+            режиссёр Михаил Тонин, Индустрия, психологический триллер, 2023
+            <br><br>
+            4)<br>
+            Так себе праздник<br>
+            режиссёр Андрей Сизов и Алсу Яхина, ВГИК, драмеди, 2023
+            <br><br>
+            3)<br>
+            Le mal du siècle<br>
+            режиссёр Виталий Музыка, ВГИК, драма, 2023
+            <br><br>
+            2)<br>
+            Спальный район<br>
+            режиссёр Алсу Яхина, комедия, 2023
+            <br><br>
+            1)<br>
+            Такая сильная любовь<br>
+            режиссёр Маргарита Громоздина и Екатерина Шаблова, ВШЭ, драма, 2023</p>
           </div>
           <div class="project">
             <p>напиши мне  <a href="https://t.me/ysvoev">(в телеграм)</a>, расскажи про свою идею, в чём тебе нужна помощь и пришли сценарий :)</p>
           </div>
-          <p>18:48, 10.01.2026</p>
+          <p>©︎ 14:52, 06.05.2026</p>
         </div>
       </div>
   </body>

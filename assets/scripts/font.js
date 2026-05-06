@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Массив доступных шрифтов
     const fonts = [
         {
-            family: '"Arial", sans-serif',
+            family: 'Arial", sans-serif',
             name: 'Arial'
         },
         {
