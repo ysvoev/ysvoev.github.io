@@ -295,11 +295,11 @@ z-index: 105;
   height: 100vh;
   width: 100vw;
   scroll-snap-align: start;
-  scale: 2;
 }
 
 .slide p {
   text-align: center;
+  scale: 2;
 }
 
 .none {
