@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // ===== НАСТРОЙКИ =====
     const CONFIG = {
-        speed: 0.4,        // Базовая скорость движения (можно менять)
+        speed: 1,        // Базовая скорость движения (можно менять)
         minSpeed: 0.5,     // Минимальная скорость
         maxSpeed: 1.0,     // Максимальная скорость
         effectDuration: 300, // Длительность эффектов в мс
