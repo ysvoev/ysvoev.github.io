@@ -175,10 +175,10 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Создаем текстовый элемент
     const workText = document.createElement('a');
-    workText.href = 'notes/vologda';
+    workText.href = 'notes/form';
     
     // Применяем эффект из scew.js к тексту
-    const originalText = '{готовлюсь к съёмкам в вологде}';
+    const originalText = '{найду форму творческой единице}';
     const words = originalText.split(/\s+/).filter(word => word.length > 0);
     const wordsToDistort = Math.max(1, Math.floor(words.length * 0.3)); // 30% как в about блоке
     

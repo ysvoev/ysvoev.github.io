@@ -133,6 +133,16 @@ a:hover {
   pointer-events: auto;
 }
 
+.date {
+  display: block;
+  text-align: center;
+  position: fixed;
+  bottom: calc(var(--padding) * 2);
+  z-index: 9999;
+  pointer-events: auto;
+  width: 100vw;
+}
+
 .links a {
   pointer-events: auto !important;
   position: relative;
@@ -148,7 +158,7 @@ a:hover {
   top: var(--padding);
   width: 100%;
   justify-content: space-between;
-  z-index: 101;
+  z-index: 105;
 }
 
 .contacts {
@@ -260,6 +270,40 @@ z-index: 105;
   left: 0;
 }
 
+.slides {
+  height: 100vh;
+  width: 100vw;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+.slides::-webkit-scrollbar {
+  display: none;
+}
+
+.slides {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  scroll-snap-align: start;
+}
+
+.slide p {
+  text-align: center;
+}
+
+.none {
+  display: none;
+}
 
 /* Блок страниц */
 
@@ -272,7 +316,7 @@ z-index: 105;
   position: sticky;
   top: calc(var(--padding) * 22);
   margin-top: calc(var(--gap) * 14);
-  z-index: 105;
+  z-index: 100;
 }
 
 .navigation {

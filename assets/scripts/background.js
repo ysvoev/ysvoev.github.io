@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const pathname = (window.location && window.location.pathname || '').toLowerCase();
     const is404Page = pathname.includes('404');
     const isFilmPage = pathname.includes('/film');
+    const isVideonotesPage = pathname.includes('/videonotes');
 
     if (is404Page) {
         // Для 404 — всегда синий из переменной
@@ -20,6 +21,15 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('Фон зафиксирован для film: var(--color-black)');
         return; // Отключаем динамику времени
     }
+
+    if (isVideonotesPage) {
+        // Для виоезаметки — всегда чёрный из переменной
+        document.body.style.setProperty('background-color', 'var(--color-black)');
+        console.log('Фон зафиксирован для videonotes: var(--color-black)');
+        return; // Отключаем динамику времени
+    }
+
+
 
     // Таблица (усреднённо по месяцам для Москвы, локальное МСК время)
     // Формат: минуты от полуночи для восхода (sr) и заката (ss)
