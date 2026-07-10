@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
     dvdText.style.position = 'fixed';
     dvdText.style.pointerEvents = 'auto';
     dvdText.style.zIndex = '110';
-    dvdText.style.fontSize = 'var(--font-size)';
+    dvdText.style.fontSize = 'calc(var(--font-size) * 2)';
     dvdText.style.fontFamily = '"Arial", sans-serif';
     dvdText.style.textDecoration = 'none';
     dvdText.style.textTransform = 'lowercase';
