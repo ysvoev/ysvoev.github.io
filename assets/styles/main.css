@@ -167,7 +167,7 @@ gap: var(--gap);
 z-index: 105;
 }
 
-.pages {
+.page-links {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -175,6 +175,10 @@ z-index: 105;
   position: sticky;
   top: calc(var(--padding) * 4);
   z-index: 102;
+}
+
+.pages:hover {
+  transition: var(--animation-duration) var(--animation-cubic);
 }
 
 .padding-left {
@@ -206,7 +210,7 @@ z-index: 105;
   flex-direction: column;
   align-items: center;
   gap: calc(var(--gap)*20);
-  z-index: 103;
+  z-index: 99;
 }
 
 .about p:not(:last-child), .about img {
@@ -300,6 +304,22 @@ z-index: 105;
 .slide p {
   text-align: center;
   scale: 2;
+}
+
+.tittle {
+  letter-spacing: 1px;
+  position: relative;
+  top: calc(var(--padding) - (var(--padding) * 2));
+}
+
+.number {
+  letter-spacing: -1px;
+}
+
+#theme .number  {
+  display: block;
+  width: 100%;
+  padding-bottom: 24px;
 }
 
 .none {

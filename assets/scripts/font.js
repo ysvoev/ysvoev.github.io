@@ -35,29 +35,62 @@ document.addEventListener('DOMContentLoaded', function() {
         
         const textElements = document.querySelectorAll('h1, h2, p, a');
         textElements.forEach(element => {
-            element.style.fontFamily = randomFont.family;
+            // Проверяем, есть ли у элемента класс .number или .tittle
+            const isSpecialElement = element.classList && (element.classList.contains('number') || element.classList.contains('tittle'));
             
-            // Коррекция стилей для Times New Roman
-            if (randomFont.name === 'Times New Roman') {
+            if (isSpecialElement) {
+                // Для .number и .tittle всегда устанавливаем Times New Roman
+                // Используем setProperty с !important для защиты от перезаписи
+                element.style.setProperty('font-family', '"Times New Roman", serif', 'important');
+                
+                // Коррекция стилей для Times New Roman
                 if (isMobile) {
-                    element.style.fontSize = 'calc(var(--m-font-size) * 1.1)';
-                    element.style.lineHeight = 'calc(var(--m-line-height) * 1.1)';
+                    element.style.setProperty('font-size', 'calc(var(--m-font-size) * 1.1)', 'important');
+                    element.style.setProperty('line-height', 'calc(var(--m-line-height) * 1.1)', 'important');
                 } else {
-                    element.style.fontSize = 'calc(var(--font-size) * 1.1)';
-                    element.style.lineHeight = 'calc(var(--line-height) * 1.1)';
+                    element.style.setProperty('font-size', 'calc(var(--font-size) * 1.1)', 'important');
+                    element.style.setProperty('line-height', 'calc(var(--line-height) * 1.1)', 'important');
                 }
+            } else {
+                // Для остальных элементов используем случайный шрифт
+                element.style.setProperty('font-family', randomFont.family, 'important');
+                
+                // Коррекция стилей для Times New Roman
+                if (randomFont.name === 'Times New Roman') {
+                    if (isMobile) {
+                        element.style.setProperty('font-size', 'calc(var(--m-font-size) * 1.1)', 'important');
+                        element.style.setProperty('line-height', 'calc(var(--m-line-height) * 1.1)', 'important');
+                    } else {
+                        element.style.setProperty('font-size', 'calc(var(--font-size) * 1.1)', 'important');
+                        element.style.setProperty('line-height', 'calc(var(--line-height) * 1.1)', 'important');
+                    }
+                }
+                // Для Arial оставляем базовые значения (ничего не меняем)
             }
-            // Для Arial оставляем базовые значения (ничего не меняем)
         });
         
-        console.log(`Шрифт ${randomFont.name} применен к ${textElements.length} элементам (${isMobile ? 'мобильная' : 'десктоп'} версия)`);
+        // Дополнительно обрабатываем элементы, которые могут быть внутри span
+        // после работы скрипта искажения
+        document.querySelectorAll('.number span, .tittle span').forEach(span => {
+            span.style.setProperty('font-family', '"Times New Roman", serif', 'important');
+        });
+        
+        console.log(`Шрифт применен к ${textElements.length} элементам (${isMobile ? 'мобильная' : 'десктоп'} версия)`);
+        console.log(`- .number и .tittle: Times New Roman (принудительно)`);
+        console.log(`- Остальные элементы: ${randomFont.name} (случайно)`);
         if (randomFont.name === 'Times New Roman') {
             console.log(`Применена коррекция размера и межстрочного интервала для Times New Roman (${isMobile ? 'мобильные переменные' : 'десктоп переменные'})`);
         }
     }
     
     // Применяем шрифт при загрузке
-    applyFontStyles();
+    setTimeout(applyFontStyles, 100);
+    
+    // Переприменяем после завершения работы скрипта искажения
+    document.addEventListener('scewProcessingComplete', function() {
+        console.log('Переприменяем шрифты после завершения скрипта искажения');
+        setTimeout(applyFontStyles, 50);
+    });
     
     // Переприменяем при изменении ориентации и размера окна
     window.addEventListener('orientationchange', () => {
@@ -67,6 +100,36 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('resize', () => {
         clearTimeout(window.fontResizeTimeout);
         window.fontResizeTimeout = setTimeout(applyFontStyles, 100);
+    });
+    
+    // Наблюдаем за изменениями в DOM для переприменения шрифта к новым элементам
+    const fontObserver = new MutationObserver(function(mutations) {
+        let shouldUpdate = false;
+        mutations.forEach(function(mutation) {
+            if (mutation.type === 'childList' && mutation.addedNodes.length > 0) {
+                mutation.addedNodes.forEach(function(node) {
+                    if (node.nodeType === Node.ELEMENT_NODE) {
+                        if (node.matches && node.matches('h1, h2, p, a')) {
+                            shouldUpdate = true;
+                        }
+                        if (node.querySelectorAll) {
+                            const nestedElements = node.querySelectorAll('h1, h2, p, a');
+                            if (nestedElements.length > 0) {
+                                shouldUpdate = true;
+                            }
+                        }
+                    }
+                });
+            }
+        });
+        if (shouldUpdate) {
+            setTimeout(applyFontStyles, 50);
+        }
+    });
+    
+    fontObserver.observe(document.body, {
+        childList: true,
+        subtree: true
     });
     
     // ===== БЛОК: ДИНАМИЧЕСКИЙ ЦВЕТ ТЕКСТА В ЗАВИСИМОСТИ ОТ ФОНА =====

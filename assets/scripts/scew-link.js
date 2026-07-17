@@ -10,11 +10,33 @@ document.addEventListener('DOMContentLoaded', function() {
         'var(--color-orange)'
     ];
     
+    // Параметры искажений для ссылок с классом .tittle
+    const tittleLinkParams = {
+        scaleY: { min: 6, max: 10 },
+        scaleX: { min: 0.8, max: 0.8 },
+        skewX: { min: -40, max: 40 }
+    };
+    
+    // Параметры для обычных ссылок
+    const defaultLinkParams = {
+        scaleY: { min: 1, max: 4 },
+        scaleX: { min: 1, max: 1 },
+        skewX: { min: -20, max: 20 }
+    };
+    
+    // Функция для генерации случайного значения в диапазоне
+    function randomRange(min, max) {
+        return (Math.random() * (max - min) + min);
+    }
+    
     // Функция для инициализации эффектов ссылок
     function initLinkEffects() {
         const links = document.querySelectorAll('a');
         
         links.forEach(link => {
+            // Проверяем, есть ли у ссылки класс .tittle
+            const isTittle = link.classList && link.classList.contains('tittle');
+            
             // Обрабатываем ссылки .page особым образом
             if (link.classList.contains('page')) {
                 // Удаляем старые обработчики
@@ -83,9 +105,18 @@ document.addEventListener('DOMContentLoaded', function() {
                     this.setAttribute('data-original-saved', 'true');
                 }
                 
+                // Выбираем параметры в зависимости от класса
+                let params;
+                if (isTittle) {
+                    params = tittleLinkParams;
+                } else {
+                    params = defaultLinkParams;
+                }
+                
                 // Генерируем случайные значения трансформации
-                const scaleY = (Math.random() * 3 + 1).toFixed(2);
-                const skewX = (Math.random() * 40 - 20).toFixed(0);
+                const scaleY = randomRange(params.scaleY.min, params.scaleY.max).toFixed(2);
+                const scaleX = randomRange(params.scaleX.min, params.scaleX.max).toFixed(2);
+                const skewX = randomRange(params.skewX.min, params.skewX.max).toFixed(0);
                 
                 // Выбираем случайный цвет
                 const randomColor = colors[Math.floor(Math.random() * colors.length)];
@@ -98,18 +129,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 const spans = this.querySelectorAll('span[data-scew-original]');
                 if (spans.length > 0) {
                     // Для ссылок со span элементами - применяем только к самой ссылке
-                    this.style.setProperty('transform', `scaleY(${scaleY}) skewX(${skewX}deg)`, 'important');
+                    this.style.setProperty('transform', `scaleY(${scaleY}) scaleX(${scaleX}) skewX(${skewX}deg)`, 'important');
                     this.style.setProperty('display', 'inline-block', 'important');
                 } else {
                     // Для обычных ссылок
                     this.style.setProperty('display', 'inline-block', 'important');
-                    this.style.setProperty('transform', `scaleY(${scaleY}) skewX(${skewX}deg)`, 'important');
+                    this.style.setProperty('transform', `scaleY(${scaleY}) scaleX(${scaleX}) skewX(${skewX}deg)`, 'important');
                 }
                 
                 this.style.setProperty('transform-origin', 'center', 'important');
                 
                 // Добавляем класс для отладки
                 this.classList.add('scew-active');
+                
+                // Логируем параметры для отладки
+                if (isTittle) {
+                    console.log(`[TITTLE LINK] scaleY: ${scaleY}, scaleX: ${scaleX}, skewX: ${skewX}deg, color: ${randomColor}`);
+                }
             };
             
             link._mouseleaveHandler = function() {
@@ -143,4 +179,3 @@ document.addEventListener('DOMContentLoaded', function() {
         initLinkEffects();
     });
 });
-
