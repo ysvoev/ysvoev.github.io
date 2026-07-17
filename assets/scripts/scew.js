@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const distortionParams = {
         // Для обычных элементов (по умолчанию)
         default: {
-            scaleY: { min: 1, max: 2 },
+            scaleY: { min: 1, max: 1.8 },
             scaleX: { min: 1, max: 1 }, // Не меняем по X
             skewX: { min: -20, max: 20 },
             distortionRate: 0.8
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Для класса .tittle (заголовки)
         tittle: {
             scaleY: { min: 8, max: 8 },
-            scaleX: { min: 1, max: 1 },
+            scaleX: { min: 1.2, max: 1.2 },
             skewX: { min: -40, max: 40 },
             distortionRate: 1,
             applyToElement: true, // Флаг: применяем ко всему элементу

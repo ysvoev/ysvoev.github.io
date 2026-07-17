@@ -337,7 +337,7 @@ z-index: 105;
   position: sticky;
   top: calc(var(--padding) * 22);
   margin-top: calc(var(--gap) * 14);
-  z-index: 100;
+  z-index: 104;
 }
 
 .navigation {
@@ -462,7 +462,7 @@ z-index: 105;
   color: var(--color-green);
   border-radius: calc(var(--radius) * 12);
   transition-delay: calc(var(--animation-duration) / 2);
-  transform: skewX(10deg);
+  transform: skewX(-20deg) rotate(15deg);
 }
 
 img, video {
