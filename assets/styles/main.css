@@ -585,13 +585,13 @@ img, video {
   }
 
   .about p:not(:last-child), .about img {
-    top: calc(var(--padding) * 74);
+    top: calc(var(--padding) * 80);
   }
 
   .photo {
     width: auto;
-    max-height: 100px;
-    min-height: 100px;
+    max-height: 160px;
+    min-height: 160px;
   }
 
   .info {
