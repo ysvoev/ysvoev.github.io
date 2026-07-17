@@ -27,9 +27,29 @@ document.addEventListener('DOMContentLoaded', function() {
     // ===== ВРЕМЕННЫЙ БЛОК: Текст "ищу работу" в начале зеркальной линии =====
     // Этот блок можно удалить в любой момент
     
-    // Создаем текстовый элемент
+    // СОЗДАЕМ КОНТЕЙНЕР ВНЕ BODY ДЛЯ ССЫЛКИ
+    const overlayContainer = document.createElement('div');
+    overlayContainer.style.position = 'fixed';
+    overlayContainer.style.top = '0';
+    overlayContainer.style.left = '0';
+    overlayContainer.style.width = '100%';
+    overlayContainer.style.height = '100%';
+    overlayContainer.style.pointerEvents = 'none'; // Пропускаем клики
+    overlayContainer.style.zIndex = '110';
+    overlayContainer.style.isolation = 'isolate'; // Изолируем от прозрачности body
+    
+    // Создаем текстовый элемент внутри контейнера
     const workText = document.createElement('a');
     workText.href = 'https://t.me/ysvoev';
+    workText.style.pointerEvents = 'auto'; // Ссылка кликабельна
+    workText.style.position = 'fixed';
+    workText.style.zIndex = '111';
+    workText.style.fontSize = 'var(--font-size)';
+    workText.style.fontFamily = '"Arial", sans-serif';
+    workText.style.textDecoration = 'none';
+    workText.style.textTransform = 'lowercase';
+    workText.style.display = 'inline-block';
+    workText.style.transition = 'transform 0.2s ease, color 0.2s ease';
     
     // Применяем эффект из scew.js к тексту
     const originalText = '{снять фильм или клип}';
@@ -66,18 +86,12 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     workText.innerHTML = textHTML;
-    workText.style.position = 'fixed';
-    workText.style.pointerEvents = 'auto';
-    workText.style.zIndex = '110';
-    workText.style.fontSize = 'var(--font-size)';
-    workText.style.fontFamily = '"Arial", sans-serif';
-    // Цвет будет установлен динамически через font.js
-    workText.style.textDecoration = 'none';
-    workText.style.textTransform = 'lowercase';
-    workText.style.transition = 'color 0.2s ease';
-    // Курсор pointer будет установлен через CSS
-    workText.style.display = 'inline-block';
-    // mix-blend-mode будет применен через CSS или другие скрипты
+    
+    // Добавляем ссылку в контейнер
+    overlayContainer.appendChild(workText);
+    
+    // Добавляем контейнер в корневой элемент (НЕ в body!)
+    document.documentElement.appendChild(overlayContainer);
     
     // Массив цветов как в scew-link.js
     const colors = [
@@ -90,7 +104,28 @@ document.addEventListener('DOMContentLoaded', function() {
         'var(--color-orange)'
     ];
     
-    // Стили при наведении как в scew-link.js
+    // ===== ЗАТУХАНИЕ BODY ПРИ НАВЕДЕНИИ =====
+    const animationDuration = 400; // ms
+    const animationCubic = 'cubic-bezier(0.8, 0, 0.2, 1)';
+    let bodyFadeTimeout = null;
+    
+    function setBodyOpacity(opacity, animate = true) {
+        if (animate) {
+            document.body.style.transition = `opacity ${animationDuration}ms ${animationCubic}`;
+        } else {
+            document.body.style.transition = 'none';
+        }
+        document.body.style.opacity = opacity;
+        
+        if (animate) {
+            clearTimeout(bodyFadeTimeout);
+            bodyFadeTimeout = setTimeout(() => {
+                document.body.style.transition = '';
+            }, animationDuration + 50);
+        }
+    }
+    
+    // Стили при наведении как в scew-link.js + затухание body
     workText.addEventListener('mouseenter', function() {
         // Генерируем случайные значения трансформации
         const scaleY = (Math.random() * 3 + 3).toFixed(2);
@@ -99,20 +134,22 @@ document.addEventListener('DOMContentLoaded', function() {
         // Выбираем случайный цвет
         const randomColor = colors[Math.floor(Math.random() * colors.length)];
         
-        // Применяем эффект
+        // Применяем эффект к ссылке
         this.style.transform = `scaleY(${scaleY}) skewX(${skewX}deg)`;
         this.style.color = randomColor;
-        this.style.transition = 'transform 0.2s ease, color 0.2s ease';
+        
+        // Затемняем body (ссылка остается видимой, т.к. она вне body)
+        setBodyOpacity(0, true);
     });
     
     workText.addEventListener('mouseleave', function() {
-        // Убираем эффект
+        // Убираем эффект со ссылки
         this.style.transform = '';
         this.style.color = ''; // Сбрасываем цвет, чтобы font.js установил динамический
-        this.style.transition = 'transform 0.2s ease, color 0.2s ease';
+        
+        // Возвращаем прозрачность body
+        setBodyOpacity(1, true);
     });
-    
-    document.body.appendChild(workText);
     
     // Получаем размеры текста один раз после добавления в DOM
     let textWidth, textHeight;
