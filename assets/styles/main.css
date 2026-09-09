@@ -431,47 +431,47 @@ a:hover {
   width: auto !important;
   height: calc(var(--pack) * 2);
   max-height: calc(var(--pack) * 2);
-  min-height: 0;
+  min-height: calc(var(--pack) * 2);
 }
 
 .pack-m-v {
   width: auto !important;
   height: calc(var(--pack) * 4);
   max-height: calc(var(--pack) * 4);
-  min-height: 0;
+  min-height: calc(var(--pack) * 4);
 }
 
 .pack-l-v {
   width: auto !important;
   height: calc(var(--pack) * 6);
   max-height: calc(var(--pack) * 6);
-  min-height: 0;
+  min-height: calc(var(--pack) * 6);
 }
 
 .pack-xl-v {
   width: auto !important;
   height: calc(var(--pack) * 8);
   max-height: calc(var(--pack) * 8);
-  min-height: 0;
+  min-height: calc(var(--pack) * 8);
 }
 
 .pack-xxl-v {
   width: auto !important;
   height: calc(var(--pack) * 12);
   max-height: calc(var(--pack) * 12);
-  min-height: 0;
+  min-height: calc(var(--pack) * 12);
 }
 
 .pack-s-h {
   width: calc(var(--pack) * 2);
-  min-width: 0;
   max-width: calc(var(--pack) * 2);
+  min-width: calc(var(--pack) * 2);
   height: auto !important;
 }
 
 .pack-m-h {
   width: calc(var(--pack) * 4);
-  min-width: 0;
+  min-width: calc(var(--pack) * 4);
   max-width: calc(var(--pack) * 4);
   height: auto !important;
 }
@@ -479,21 +479,21 @@ a:hover {
 .pack-l-h {
   width: calc(var(--pack) * 6);
   max-width: calc(var(--pack) * 6);
-  min-width: 0;
+  min-width: calc(var(--pack) * 6);
   height: auto !important;
 }
 
 .pack-xl-h {
   width: calc(var(--pack) * 8);
   max-width: calc(var(--pack) * 8);
-  min-width: 0;
+  min-width: calc(var(--pack) * 8);
   height: auto !important;
 }
 
 .pack-xxl-h {
   width: calc(var(--pack) * 12);
   max-width: calc(var(--pack) * 12);
-  min-width: 0;
+  min-width: calc(var(--pack) * 12);
   height: auto !important;
 }
 
