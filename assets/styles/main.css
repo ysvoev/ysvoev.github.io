@@ -59,7 +59,7 @@ video[data-src] {
 /* Состояние загрузки - мигает */
 img.loading,
 video.loading {
-  animation: loadingPulse calc(var(--animation-duration) * 8) var(--animation-cubic) infinite;
+  animation: loadingPulse calc(var(--animation-duration) * 4) var(--animation-cubic) infinite;
   opacity: 0.2;
 }
 
@@ -76,8 +76,8 @@ video.preloaded {
 /* Дополнительно - фон-заглушка для элементов до загрузки */
 img[data-src]:not(.loaded):not(.preloaded),
 video[data-src]:not(.loaded):not(.preloaded) {
-  background-color: var(--color-blackgrey);
-  min-height: 50px; /* Чтобы был виден фон у видео без размеров */
+  background-color: var(--color-deepgrey);
+  height: calc(var(--pack) * 2);
 }
 
 
