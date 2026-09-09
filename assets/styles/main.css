@@ -44,7 +44,7 @@ video[data-src] {
 @keyframes loadingPulse {
   0% {
     opacity: 0.2;
-    background-color: var(--color-blackgrey);
+    background-color: var(--color-deepgrey);
   }
   50% {
     opacity: 0.4;
@@ -52,14 +52,14 @@ video[data-src] {
   }
   100% {
     opacity: 0.2;
-    background-color: var(--color-blackgrey);
+    background-color: var(--color-deepgrey);
   }
 }
 
 /* Состояние загрузки - мигает */
 img.loading,
 video.loading {
-  animation: loadingPulse calc(var(--animation-duration) * 2) var(--animation-cubic) infinite;
+  animation: loadingPulse calc(var(--animation-duration) * 8) var(--animation-cubic) infinite;
   opacity: 0.2;
 }
 
