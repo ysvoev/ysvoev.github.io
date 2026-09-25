@@ -4,8 +4,8 @@ document.addEventListener('DOMContentLoaded', function () {
     let animationTimeouts = [];
     let isFilterApplied = false;
 
-    const ANIMATION_SPEED = 160;
-    const STAGGER_DELAY = 80;
+    const ANIMATION_SPEED = 200;
+    const STAGGER_DELAY = 40;
     const FILTER_MODE = 'any';
 
     function applyFiltersWithAnimation(filters) {

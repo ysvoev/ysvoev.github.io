@@ -33,52 +33,18 @@
   --cursor-clickable: pointer;
 }
 
-/* Базовое состояние - скрыт */
 img[data-src],
 video[data-src] {
   opacity: 0;
   transition: var(--animation-duration) var(--animation-cubic);
+
 }
 
-/* Анимация мигания при загрузке */
-@keyframes loadingPulse {
-  0% {
-    opacity: 0.2;
-    background-color: var(--color-deepgrey);
-  }
-  50% {
-    opacity: 0.4;
-    background-color: var(--color-deepgrey);
-  }
-  100% {
-    opacity: 0.2;
-    background-color: var(--color-deepgrey);
-  }
-}
-
-/* Состояние загрузки - мигает */
-img.loading,
-video.loading {
-  animation: loadingPulse calc(var(--animation-duration) * 4) var(--animation-cubic) infinite;
-  opacity: 0.2;
-}
-
-/* Состояние после загрузки - плавно появляется */
-img.loaded,
-video.loaded,
-img.preloaded,
-video.preloaded {
+img[data-src].loaded,
+video[data-src].loaded,
+img[data-src].preloaded,
+video[data-src].preloaded {
   opacity: 1;
-  animation: none;
-  background-color: transparent;
-}
-
-/* Дополнительно - фон-заглушка для элементов до загрузки */
-img[data-src]:not(.loaded):not(.preloaded),
-video[data-src]:not(.loaded):not(.preloaded) {
-  background-color: var(--color-deepgrey);
-  width: 100%;
-  height: 100%;
 }
 
 
@@ -339,7 +305,7 @@ a:hover {
 .note .pack {
   padding: calc(var(--padding) * 8);
   background-color: var(--color-blackgrey);
-  border-radius: calc(var(--radius) * 20);
+  border-radius: calc(var(--radius) * 40);
 }
 
 .note p {
@@ -412,9 +378,11 @@ a:hover {
 
 .pack {
   --pack-tilt: 0deg;
+  position: absolute;
   width: 100%;
   max-width: 100%;
   min-width: 0; 
+  height: auto;
   display: inline-grid;
   place-items: center;
   place-content: center;
@@ -429,73 +397,73 @@ a:hover {
 }
 
 .pack-s-v {
-  width: auto !important;
+  width: auto;
   height: calc(var(--pack) * 2);
   max-height: calc(var(--pack) * 2);
-  min-height: calc(var(--pack) * 2);
+  min-height: 0;
 }
 
 .pack-m-v {
-  width: auto !important;
+  width: auto;
   height: calc(var(--pack) * 4);
   max-height: calc(var(--pack) * 4);
-  min-height: calc(var(--pack) * 4);
+  min-height: 0;
 }
 
 .pack-l-v {
-  width: auto !important;
+  width: auto;
   height: calc(var(--pack) * 6);
   max-height: calc(var(--pack) * 6);
-  min-height: calc(var(--pack) * 6);
+  min-height: 0;
 }
 
 .pack-xl-v {
-  width: auto !important;
+  width: auto;
   height: calc(var(--pack) * 8);
   max-height: calc(var(--pack) * 8);
-  min-height: calc(var(--pack) * 8);
+  min-height: 0;
 }
 
 .pack-xxl-v {
-  width: auto !important;
+  width: auto;
   height: calc(var(--pack) * 12);
   max-height: calc(var(--pack) * 12);
-  min-height: calc(var(--pack) * 12);
+  min-height: 0;
 }
 
 .pack-s-h {
   width: calc(var(--pack) * 2);
+  min-width: 0;
   max-width: calc(var(--pack) * 2);
-  min-width: calc(var(--pack) * 2);
-  height: auto !important;
+  height: auto;
 }
 
 .pack-m-h {
   width: calc(var(--pack) * 4);
-  min-width: calc(var(--pack) * 4);
+  min-width: 0;
   max-width: calc(var(--pack) * 4);
-  height: auto !important;
+  height: auto;
 }
 
 .pack-l-h {
   width: calc(var(--pack) * 6);
   max-width: calc(var(--pack) * 6);
-  min-width: calc(var(--pack) * 6);
-  height: auto !important;
+  min-width: 0;
+  height: auto;
 }
 
 .pack-xl-h {
   width: calc(var(--pack) * 8);
   max-width: calc(var(--pack) * 8);
-  min-width: calc(var(--pack) * 8);
-  height: auto !important;
+  min-width: 0;
+  height: auto;
 }
 
 .pack-xxl-h {
   width: calc(var(--pack) * 12);
   max-width: calc(var(--pack) * 12);
-  min-width: calc(var(--pack) * 12);
-  height: auto !important;
+  min-width: 0;
+  height: auto;
 }
 
 .pack > .case {
@@ -504,9 +472,10 @@ a:hover {
   box-sizing: border-box;
   min-width: 0;
   min-height: 0;
-  max-width: 100%;
-  max-height: 100%;
-  height: auto;
+  width: auto !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  height: auto !important;
   object-fit: contain;
   object-position: center;
   border-radius: calc(var(--radius) * 16);
