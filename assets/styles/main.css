@@ -553,6 +553,38 @@ img, video {
   border-radius: calc(var(--radius) * 20);
 }
 
+.slides {
+  height: 100vh;
+  width: 100vw;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+.slides::-webkit-scrollbar {
+  display: none;
+}
+
+.slides {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  scroll-snap-align: start;
+}
+
+.slide p {
+  text-align: center;
+  scale: 2;
+}
+
 .error {
   margin: auto;
   width: 100vw;
