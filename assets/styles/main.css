@@ -600,6 +600,158 @@ img, video {
   display: none !important;
 }
 
+/* gallery */
+img { cursor: zoom-in !important; }
+img.photo { cursor: pointer !important; }
+
+.gallery {
+  position: fixed;
+  inset: 0;
+  background-color: var(--color-black, #000);
+  z-index: 9999;
+  overflow: hidden;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.gallery[hidden] { display: none; }
+
+/* ── кольцо ── */
+.gallery .ring {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.gallery .slot {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: var(--card-w);
+  height: var(--card-h);
+  transform-origin: center;
+  will-change: transform;
+  /* transform и z-index пишет paint() */
+}
+
+/* ── парение ── */
+/* контейнер карточки — центрируем картинку внутри слота */
+.gallery .float {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  animation: gallery-bob 5s ease-in-out infinite;
+}
+
+/* база — без масштабирования самим элементом */
+.gallery .float img {
+  display: block;
+  -webkit-user-drag: none;
+  user-select: none;
+  pointer-events: none;
+  border-radius: calc(var(--radius) * 10);
+}
+
+/* contain (по умолчанию): вписываем в cardW × cardH,
+   сохраняем пропорции, НЕ увеличиваем выше оригинала */
+.gallery .float[data-fit="contain"] img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* cover: заполняет слот, обрезает, может увеличивать */
+.gallery .float[data-fit="cover"] img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* none: оригинальный размер, как есть */
+.gallery .float[data-fit="none"] img {
+  width: auto;
+  height: auto;
+  max-width: none;
+  max-height: none;
+}
+
+/* ── видео ── */
+.gallery .float video {
+  display: block;
+  -webkit-user-drag: none;
+  user-select: none;
+  pointer-events: none;
+  border-radius: calc(var(--radius) * 10);
+  background: #000;
+}
+
+.gallery .float[data-fit="contain"] video {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.gallery .float[data-fit="cover"] video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery .float[data-fit="none"] video {
+  width: auto;
+  height: auto;
+  max-width: none;
+  max-height: none;
+}
+
+/* курсор по видео как по картинке */
+video { cursor: zoom-in !important; }
+.gallery video { cursor: inherit !important; }
+
+@keyframes gallery-bob {
+  0%, 100% {
+    transform: translateY(calc(var(--lift, 0px) * -1))
+               rotate(calc(var(--sway, 0deg) * -1));
+  }
+  50% {
+    transform: translateY(var(--lift, 0px))
+               rotate(var(--sway, 0deg));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery .float { animation: none; }
+}
+
+/* ── зоны кликов ── */
+.gallery .zone {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 1000;
+}
+.gallery .zone.current {
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(var(--card-w) + var(--zone-pad, 40px) * 2);
+  cursor: zoom-out !important;
+}
+.gallery .zone.prev {
+  left: 0;
+  right: calc(50% + (var(--card-w) + var(--zone-pad, 40px) * 2) / 2);
+  cursor: w-resize !important;
+}
+.gallery .zone.next {
+  left: calc(50% + (var(--card-w) + var(--zone-pad, 40px) * 2) / 2);
+  right: 0;
+  cursor: e-resize !important;
+}
+
 :root {
   font-family: Inter, sans-serif;
   font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
